@@ -1,0 +1,3 @@
+note:
+
+jquery autocomplete 1.1 official has a bug with ie browsers, causes the focus to goto the start of the textbox on mouse-select, rather than at the end for autosuggestions

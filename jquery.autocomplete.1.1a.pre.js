@@ -11,7 +11,7 @@
  *
  */
 
-;(function($) {
+(function($) {
 	
 $.fn.extend({
 	autocomplete: function(urlOrData, options) {
@@ -243,7 +243,7 @@ $.Autocompleter = function(input, options) {
 			stopLoading();
 			select.hide();
 		}
-	};
+	}
 	
 	function trimWords(value) {
 		if ( !value ) {
@@ -277,12 +277,12 @@ $.Autocompleter = function(input, options) {
 			// select the portion of the value not typed by the user (so the next character will erase)
 			$.Autocompleter.Selection(input, previousValue.length, previousValue.length + sValue.length);
 		}
-	};
+	}
 
 	function hideResults() {
 		clearTimeout(timeout);
 		timeout = setTimeout(hideResultsNow, 200);
-	};
+	}
 
 	function hideResultsNow() {
 		var wasVisible = select.visible();
@@ -308,7 +308,7 @@ $.Autocompleter = function(input, options) {
 		if (wasVisible)
 			// position cursor at end of input field
 			$.Autocompleter.Selection(input, input.value.length, input.value.length);
-	};
+	}
 
 	function receiveData(q, data) {
 		if ( data && data.length && hasFocus ) {
@@ -319,7 +319,7 @@ $.Autocompleter = function(input, options) {
 		} else {
 			hideResultsNow();
 		}
-	};
+	}
 
 	function request(term, success, failure) {
 		if (!options.matchCase)
@@ -360,7 +360,7 @@ $.Autocompleter = function(input, options) {
 			select.emptyList();
 			failure(term);
 		}
-	};
+	}
 	
 	function parse(data) {
 		var parsed = [];
@@ -377,11 +377,11 @@ $.Autocompleter = function(input, options) {
 			}
 		}
 		return parsed;
-	};
+	}
 
 	function stopLoading() {
 		$input.removeClass(options.loadingClass);
-	};
+	}
 
 };
 
@@ -426,7 +426,7 @@ $.Autocompleter.Cache = function(options) {
 		}
 		if (i == -1) return false;
 		return i == 0 || options.matchContains;
-	};
+	}
 	
 	function add(q, value) {
 		if (length > options.cacheLength){
@@ -479,7 +479,7 @@ $.Autocompleter.Cache = function(options) {
 			if ( nullData++ < options.max ) {
 				stMatchSets[""].push(row);
 			}
-		};
+		}
 
 		// add the data items to the cache
 		$.each(stMatchSets, function(i, value) {
@@ -622,7 +622,7 @@ $.Autocompleter.Select = function (options, input, select, config) {
                 list.scrollTop(offset);
             }
         }
-	};
+	}
 	
 	function movePosition(step) {
 		active += step;

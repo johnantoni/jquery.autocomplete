@@ -1,3 +1,15 @@
-note:
+Why:
+  jquery autocomplete 1.1 official has a bug with IE browsers (6,7,8+) which causes 
+  the focus to go to the start of the textbox on mouse-select, rather than at the 
+  end for autosuggestions
 
-jquery autocomplete 1.1 official has a bug with ie browsers, causes the focus to goto the start of the textbox on mouse-select, rather than at the end for autosuggestions
+So:
+  This repository contains 1.1 official and 1.1pre, which DOES work in IE.
+  
+  What i've done is run the jquery.autocomplete.1.1pre thru JSLint to fix any problems
+  and then compact it with Google Closure Compiler, hence version 1.1a.pre
+  
+  For completeness, i've also included the official version, bgiframe (which fixes focus
+  in IE, sometimes) and ajaxQueue.
+  
+Happy coding

@@ -13,3 +13,18 @@ So:
   in IE, sometimes) and ajaxQueue.
   
 Happy coding
+
+Example JS with message at bottom of autocomplete results...
+
+    var data = "Core Core Selectors Attributes Traversing Manipulation CSS Events Effects Ajax Utilities".split(" ");
+    $(".autocomplete").autocomplete(data, {minChars: 0});
+
+    function append_message(text) {
+      if ($(".ac_results").find("span").length == 0) {
+        $(".ac_results").append("<span>"+text+"</span>");
+      };
+    };
+
+    $(".autocomplete").keyup(function(){
+      append_message("If your country is not listed enter it anyway");
+    });
